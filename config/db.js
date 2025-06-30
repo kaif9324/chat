@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const  mongoURL = 'mongodb://localhost:27017/CHAT_APP';
+
+const  mongoURL =  'mongodb://localhost:27017/CHAT_APP';
 // Connect to MongoDB
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,

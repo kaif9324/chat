@@ -1,6 +1,6 @@
 const userSchema = require("../module/userSchema");
 const { jwtMiddleware, genToken } = require("../middleware/jwt");
-const userStatus = require("../module/userStatus");
+
 
 exports.register = async (req, resp) => {
   try {
@@ -13,8 +13,7 @@ exports.register = async (req, resp) => {
     };
 
     const token = genToken(payload);
-    console.log(token);
-    console.log(response, "data send sucessfully");
+ 
     resp.status(200).json({ response: response, token: token });
   } catch (err) {
     resp.status(500).json({ error: "internel server error" });
@@ -39,7 +38,7 @@ exports.login = async (req, resp) => {
       email: user.email,
     };
     const token = genToken(payload);
-    console.log(token);
+ 
     resp.status(200).json({ token });
   } catch (err) {
     console.log(err);

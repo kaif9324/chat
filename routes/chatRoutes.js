@@ -14,7 +14,7 @@ router.post('/history',async(req,resp)=>{
                 ],
                 deletedFor: { $ne: senderId } //$ne is an operator tha means NOT EQUAL IF SENDER ID AVAILABLE IT WILL SKIP ITS DATA BCZ HE IS DELETED FROM FRONTEND AND HIS ID ADDED
         }).sort({createdAt:1});
-        console.log("History data sending to frontend: ", message);  
+    
         resp.json(message)
 
     }catch(error){
